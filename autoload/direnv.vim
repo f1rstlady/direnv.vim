@@ -36,7 +36,7 @@ function! direnv#on_exit(_, status, ...) abort
       endif
     endfor
   endif
-  exec join(s:job_status.stdout, "\n")
+  execute 'echo '.join(s:job_status.stdout, "\n")
 endfunction
 
 function! direnv#job_status_reset() abort
