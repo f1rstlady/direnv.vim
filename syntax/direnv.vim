@@ -1,7 +1,3 @@
-" direnv.vim - support for direnv <http://direnv.net>
-" Author:       JINNOUCHI Yasushi <me@delphinus.dev>
-" Version:      0.2
-
 if exists('b:current_syntax')
   finish
 endif
@@ -85,5 +81,3 @@ hi def link direnvFunc shStatement
 syn cluster direnvStatement contains=direnvCommandFunc,direnvPathFunc,direnvExpandPathFunc,direnvPathAddFunc,direnvUseFunc,direnvLayoutFunc,direnvFunc
 syn cluster shArithParenList add=@direnvStatement
 syn cluster shCommandSubList add=@direnvStatement
-
-" vim:se fdm=marker:
