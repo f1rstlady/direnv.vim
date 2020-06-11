@@ -30,10 +30,8 @@ function! direnv#on_exit(_, status, ...) abort
   let s:job_status.running = 0
 
   if !g:direnv_silent_load
-    for l:m in s:job_status.stderr
-      if l:m isnot# ''
-        echom l:m
-      endif
+    for msg in filter(s:job_status.stderr, 'v:val !=# ""')
+      echomsg msg
     endfor
   endif
   execute 'echo '.join(s:job_status.stdout, "\n")
