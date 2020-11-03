@@ -37,7 +37,6 @@ function! direnv#on_exit(_, status, ...) abort
     endfor
   endif
   exec join(s:job_status.stdout, "\n")
-  call direnv#extra_vimrc#load()
 endfunction
 
 function! direnv#job_status_reset() abort
